@@ -3,7 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Redfin Clone</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      getData();
+      async function getData() {
+        const response = await fetch('home-data.csv');
+        const data = await response.text();
+
+        const rows = data.split('\n').slice(1);
+        rows.forEach((elt) => {
+          const row = elt.split(',');
+          const address = row[3];
+          const price = row[7];
+          const bed = row[8];
+          const bath = row[9];
+          const sqft = row[11];
+          console.log(address, price, bed, bath, sqft);
+        });
+      }
+    </script>
+  </body>
 </html>

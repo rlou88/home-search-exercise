@@ -12,14 +12,14 @@
         const response = await fetch('home-data.csv');
         const data = await response.text();
 
-        const rows = data.split('\n').slice(1);
-        rows.forEach((elt) => {
-          const row = elt.split(',');
-          const address = row[3];
-          const price = row[7];
-          const bed = row[8];
-          const bath = row[9];
-          const sqft = row[11];
+        const table = data.split('\n').slice(1);
+        table.forEach((row) => {
+          const col = row.split(',');
+          const address = col[3];
+          const price = col[7];
+          const bed = col[8];
+          const bath = col[9];
+          const sqft = col[11];
           console.log(address, price, bed, bath, sqft);
         });
       }

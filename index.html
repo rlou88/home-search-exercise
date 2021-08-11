@@ -3,39 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+    <link rel="stylesheet" href="stylesheet.css" />
+    <!-- <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
-    />
-    <title>Redfin Clone</title>
+    /> -->
+    <title>Bluefin</title>
   </head>
   <body>
-    <h1 class="text-center">Hello World</h1>
+    <div class="container">
+      <h1>&#127968; Bluefin &#127968;</h1>
+      <div id="searchWrapper">
+        <input
+          type="text"
+          name="searchBar"
+          id="searchBar"
+          placeholder="Search for a home"
+        />
+      </div>
+      <ul id="houseList"></ul>
+    </div>
 
-    <script>
-      getData();
-      async function getData() {
-        const response = await fetch('home-data.csv');
-        const data = await response.text();
-
-        const table = data.split('\n').slice(1);
-        table.forEach((row) => {
-          const col = row.split(',');
-          const address = col[3];
-          const price = col[7];
-          const bed = col[8];
-          const bath = col[9];
-          const sqft = col[11];
-          console.log(address, price, bed, bath, sqft);
-        });
-      }
-    </script>
-    <script
+    <script src="app.js"></script>
+    <!-- <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
   </body>
 </html>

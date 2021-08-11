@@ -1,3 +1,4 @@
+// function to parse csv file
 // getData();
 // async function getData() {
 //   const response = await fetch('home-data.csv');
@@ -7,25 +8,12 @@
 //   table.forEach((row) => {
 //     const col = row.split(',');
 //     const address = col[3];
-//     // listingAdd.push(address);
 //     const price = col[7];
 //     const bed = col[8];
 //     const bath = col[9];
 //     const sqft = col[11];
 //     const listingUrl = col[20];
 //     console.log(address, price, bed, bath, sqft, listingUrl);
-//     let addId = document.getElementById('getAddress');
-//     let priceId = document.getElementById('getPrice');
-//     let bedId = document.getElementById('getBed');
-//     let bathId = document.getElementById('getBath');
-//     let sqftId = document.getElementById('getSqft');
-//     let listingUrlId = document.getElementById('getListUrl');
-//     addId.innerHTML = address;
-//     priceId.innerHTML = price;
-//     bedId.innerHTML = bed;
-//     bathId.innerHTML = bath;
-//     sqftId.innerHTML = sqft;
-//     listingUrlId.innerHTML = listingUrl;
 //   });
 // }
 
@@ -56,9 +44,10 @@ const displayHouses = (Houses) => {
   const htmlString = Houses.map((house) => {
     return `
             <li class="house">
-                <h2>${house.ADDRESS}</h2>
-                <p>House: ${house.CITY}</p>
-                
+                <h3>${house.ADDRESS}</h3>
+                <p>${house.BEDS} Beds ${house.BATHS} Baths ${house['SQUARE FEET']} Sq.Ft</p>
+                <h4>$${house.PRICE}</h4>
+                <a href="${house['URL (SEE http://www.redfin.com/buy-a-home/comparative-market-analysis FOR INFO ON PRICING)']}" target="_blank">View</a>
             </li>
         `;
   }).join('');

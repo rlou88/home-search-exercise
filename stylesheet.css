@@ -37,7 +37,7 @@ h1 {
   text-align: left;
 }
 
-.house > h2 {
+.house > h3 {
   grid-area: name;
   margin-bottom: 0px;
 }
@@ -48,9 +48,14 @@ h1 {
   margin-top: -18px; */
 }
 
-.house > h3 {
+.house > h4 {
   max-height: 100px;
-  grid-area: image;
+  margin-bottom: 0px;
+}
+
+.house > a {
+  margin-top: 16px;
+  margin-left: 16px;
 }
 
 #searchBar {
